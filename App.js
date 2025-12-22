@@ -47,7 +47,11 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style="dark" />
 
-      <Text style={styles.header}>Kullanıcılar</Text>
+      <View style={styles.lessonBadge}>
+        <Text style={styles.lessonText}>DERS 1</Text>
+      </View>
+      <Text style={styles.header}>Temel Bileşenler</Text>
+      <Text style={styles.subtitle}>View, Text, Image, FlatList, TouchableOpacity</Text>
 
       <FlatList
         data={kullanicilar}
@@ -88,10 +92,28 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingHorizontal: 20,
   },
+  lessonBadge: {
+    backgroundColor: '#9b59b6',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    alignSelf: 'flex-start',
+    marginBottom: 10,
+  },
+  lessonText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
   header: {
-    fontSize: 28,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#2c3e50',
+    marginBottom: 5,
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#7f8c8d',
     marginBottom: 20,
   },
   card: {
