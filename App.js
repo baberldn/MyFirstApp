@@ -9,6 +9,9 @@ import {
   Platform,
 } from 'react-native';
 
+// Görev componentlerini import et
+import CounterApp from './CounterApp';
+
 export default function App() {
   return (
     <ScrollView style={styles.container}>
@@ -242,6 +245,20 @@ export default function App() {
         <View style={styles.versionBox}>
           <Text style={styles.versionLabel}>İşletim Sistemi Versiyonu:</Text>
           <Text style={styles.versionValue}>{Platform.Version}</Text>
+        </View>
+      </View>
+
+      {/* ==================== GÖREV 1 ==================== */}
+      <View style={styles.taskCard}>
+        <View style={[styles.lessonBadge, { backgroundColor: '#667eea' }]}>
+          <Text style={styles.lessonText}>GÖREV 1</Text>
+        </View>
+        <Text style={styles.header}>Sayaç Uygulaması</Text>
+        <Text style={styles.subtitle}>useState, TouchableOpacity, StyleSheet</Text>
+
+        {/* CounterApp componentini burada kullan */}
+        <View style={styles.taskContainer}>
+          <CounterApp />
         </View>
       </View>
 
@@ -663,5 +680,27 @@ const styles = StyleSheet.create({
     color: '#f39c12',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+
+  // Görev kartı stilleri
+  taskCard: {
+    backgroundColor: '#fff',
+    marginHorizontal: 15,
+    marginTop: 20,
+    padding: 20,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#667eea',
+    shadowColor: '#667eea',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 5,
+  },
+  taskContainer: {
+    marginTop: 15,
+    borderRadius: 12,
+    overflow: 'hidden',
+    minHeight: 400,
   },
 });
