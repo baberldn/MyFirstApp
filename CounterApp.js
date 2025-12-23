@@ -13,49 +13,29 @@ export default function CounterApp() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1); // Adım değeri: 1, 5 veya 10
 
-  // Animasyon için
-  const scaleAnim = useRef(new Animated.Value(1)).current;
-  const colorAnim = useRef(new Animated.Value(0)).current;
+  // Animasyon için - hafif bounce efekti
+  const bounceAnim = useRef(new Animated.Value(0)).current;
 
   // Uzun basma için interval referansı
   const intervalRef = useRef(null);
 
-  // Sayı değişince animasyon
+  // Sayı değişince animasyon - yumuşak bounce
   useEffect(() => {
-    // Scale animasyonu
+    // Önce yukarı, sonra geri
     Animated.sequence([
-      Animated.timing(scaleAnim, {
-        toValue: 1.2,
-        duration: 100,
+      Animated.timing(bounceAnim, {
+        toValue: -8,
+        duration: 80,
         useNativeDriver: true,
       }),
-      Animated.timing(scaleAnim, {
-        toValue: 1,
-        duration: 100,
-        useNativeDriver: true,
-      }),
-    ]).start();
-
-    // Renk animasyonu
-    Animated.sequence([
-      Animated.timing(colorAnim, {
-        toValue: 1,
-        duration: 150,
-        useNativeDriver: false,
-      }),
-      Animated.timing(colorAnim, {
+      Animated.spring(bounceAnim, {
         toValue: 0,
-        duration: 150,
-        useNativeDriver: false,
+        friction: 4,
+        tension: 300,
+        useNativeDriver: true,
       }),
     ]).start();
   }, [count]);
-
-  // Animasyonlu renk
-  const animatedColor = colorAnim.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['#667eea', '#22c55e'],
-  });
 
   // Artırma fonksiyonu
   const increment = () => {
@@ -120,16 +100,16 @@ export default function CounterApp() {
       </View>
 
       {/* Sayı gösterimi - Animasyonlu */}
-      <Animated.View
-        style={[
-          styles.counterDisplay,
-          { transform: [{ scale: scaleAnim }] },
-        ]}
-      >
-        <Animated.Text style={[styles.counterText, { color: animatedColor }]}>
+      <View style={styles.counterDisplay}>
+        <Animated.Text
+          style={[
+            styles.counterText,
+            { transform: [{ translateY: bounceAnim }] },
+          ]}
+        >
           {count}
         </Animated.Text>
-      </Animated.View>
+      </View>
 
       {/* Butonlar */}
       <View style={styles.buttonRow}>
@@ -229,6 +209,7 @@ const styles = StyleSheet.create({
   counterText: {
     fontSize: 56,
     fontWeight: 'bold',
+    color: '#667eea',
   },
   buttonRow: {
     flexDirection: 'row',
