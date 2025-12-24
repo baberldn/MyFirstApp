@@ -7,6 +7,7 @@ import LessonsScreen from './screens/LessonsScreen';
 import HomeScreen from './screens/HomeScreen';
 import DetailsScreen from './screens/DetailsScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import Lesson6Navigator from './screens/lesson6/Lesson6Navigator';
 
 // Stack Navigator oluştur
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,15 @@ export default function App() {
           component={ProfileScreen}
           options={{
             title: 'Profilim',
+          }}
+        />
+
+        {/* Ders 6 - Tab Demo */}
+        <Stack.Screen
+          name="TabDrawerDemo"
+          component={Lesson6Navigator}
+          options={{
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

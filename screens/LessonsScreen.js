@@ -278,6 +278,22 @@ export default function LessonsScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
+      {/* ==================== DERS 6 ==================== */}
+      <TouchableOpacity
+        style={styles.lessonCard}
+        onPress={() => navigation.navigate('TabDrawerDemo')}
+      >
+        <View style={[styles.lessonBadge, { backgroundColor: '#9b59b6' }]}>
+          <Text style={styles.lessonText}>DERS 6</Text>
+        </View>
+        <Text style={styles.header}>Tab & Drawer</Text>
+        <Text style={styles.subtitle}>Bottom Tabs, Drawer Menu, Nested Navigators</Text>
+
+        <View style={[styles.navDemoPreview, { backgroundColor: '#9b59b6' }]}>
+          <Text style={styles.navDemoText}>Tab & Drawer Demo →</Text>
+        </View>
+      </TouchableOpacity>
+
       {/* Alt boşluk */}
       <View style={{ height: 50 }} />
 
