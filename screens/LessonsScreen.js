@@ -294,6 +294,22 @@ export default function LessonsScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
+      {/* ==================== DERS 8 ==================== */}
+      <TouchableOpacity
+        style={styles.lessonCard}
+        onPress={() => navigation.navigate('ComponentsDemo')}
+      >
+        <View style={[styles.lessonBadge, { backgroundColor: '#16a085' }]}>
+          <Text style={styles.lessonText}>DERS 8</Text>
+        </View>
+        <Text style={styles.header}>Custom Components</Text>
+        <Text style={styles.subtitle}>Reusable Components, Props, Patterns</Text>
+
+        <View style={[styles.navDemoPreview, { backgroundColor: '#16a085' }]}>
+          <Text style={styles.navDemoText}>Button & Card Demo →</Text>
+        </View>
+      </TouchableOpacity>
+
       {/* Alt boşluk */}
       <View style={{ height: 50 }} />
 

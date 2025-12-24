@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import DetailsScreen from './screens/DetailsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import Lesson6Navigator from './screens/lesson6/Lesson6Navigator';
+import ComponentsDemo from './screens/ComponentsDemo';
 
 // Stack Navigator oluştur
 const Stack = createNativeStackNavigator();
@@ -72,6 +73,15 @@ export default function App() {
           component={Lesson6Navigator}
           options={{
             headerShown: false,
+          }}
+        />
+
+        {/* Ders 8 - Custom Components */}
+        <Stack.Screen
+          name="ComponentsDemo"
+          component={ComponentsDemo}
+          options={{
+            title: 'Custom Components',
           }}
         />
       </Stack.Navigator>
