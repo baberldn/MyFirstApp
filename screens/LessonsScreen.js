@@ -326,6 +326,22 @@ export default function LessonsScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
+      {/* ==================== GÖREV 2 ==================== */}
+      <TouchableOpacity
+        style={[styles.taskCard, { borderColor: '#1a1a2e' }]}
+        onPress={() => navigation.navigate('Calculator')}
+      >
+        <View style={[styles.lessonBadge, { backgroundColor: '#1a1a2e' }]}>
+          <Text style={styles.lessonText}>GÖREV 2</Text>
+        </View>
+        <Text style={styles.header}>Hesap Makinesi</Text>
+        <Text style={styles.subtitle}>Grid Layout, State Yönetimi, Matematiksel İşlemler</Text>
+
+        <View style={[styles.navDemoPreview, { backgroundColor: '#667eea' }]}>
+          <Text style={styles.navDemoText}>Hesap Makinesini Aç →</Text>
+        </View>
+      </TouchableOpacity>
+
       {/* Alt boşluk */}
       <View style={{ height: 50 }} />
 

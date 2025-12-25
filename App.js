@@ -10,6 +10,7 @@ import ProfileScreen from './screens/ProfileScreen';
 import Lesson6Navigator from './screens/lesson6/Lesson6Navigator';
 import ComponentsDemo from './screens/ComponentsDemo';
 import AnimationsDemo from './screens/AnimationsDemo';
+import CalculatorApp from './screens/CalculatorApp';
 
 // Stack Navigator oluştur
 const Stack = createNativeStackNavigator();
@@ -92,6 +93,17 @@ export default function App() {
           component={AnimationsDemo}
           options={{
             title: 'Animasyonlar',
+          }}
+        />
+
+        {/* Görev 2 - Calculator */}
+        <Stack.Screen
+          name="Calculator"
+          component={CalculatorApp}
+          options={{
+            title: 'Hesap Makinesi',
+            headerStyle: { backgroundColor: '#1a1a2e' },
+            headerTintColor: '#667eea',
           }}
         />
       </Stack.Navigator>
