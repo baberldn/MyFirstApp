@@ -11,6 +11,7 @@ import Lesson6Navigator from './screens/lesson6/Lesson6Navigator';
 import ComponentsDemo from './screens/ComponentsDemo';
 import AnimationsDemo from './screens/AnimationsDemo';
 import CalculatorApp from './screens/CalculatorApp';
+import ProfileCardsApp from './screens/ProfileCardsApp';
 
 // Stack Navigator oluştur
 const Stack = createNativeStackNavigator();
@@ -104,6 +105,16 @@ export default function App() {
             title: 'Hesap Makinesi',
             headerStyle: { backgroundColor: '#1a1a2e' },
             headerTintColor: '#667eea',
+          }}
+        />
+
+        {/* Görev 3 - Profile Cards */}
+        <Stack.Screen
+          name="ProfileCards"
+          component={ProfileCardsApp}
+          options={{
+            title: 'Profil Kartlari',
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

@@ -342,6 +342,22 @@ export default function LessonsScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
+      {/* ==================== GÖREV 3 ==================== */}
+      <TouchableOpacity
+        style={[styles.taskCard, { borderColor: '#8B5CF6' }]}
+        onPress={() => navigation.navigate('ProfileCards')}
+      >
+        <View style={[styles.lessonBadge, { backgroundColor: '#8B5CF6' }]}>
+          <Text style={styles.lessonText}>GÖREV 3</Text>
+        </View>
+        <Text style={styles.header}>Profil Kartlari</Text>
+        <Text style={styles.subtitle}>Tab Navigation, Profil UI, Modal, Animasyonlar</Text>
+
+        <View style={[styles.navDemoPreview, { backgroundColor: '#8B5CF6' }]}>
+          <Text style={styles.navDemoText}>Profilleri Gor →</Text>
+        </View>
+      </TouchableOpacity>
+
       {/* Alt boşluk */}
       <View style={{ height: 50 }} />
 
