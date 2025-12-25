@@ -9,6 +9,7 @@ import DetailsScreen from './screens/DetailsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import Lesson6Navigator from './screens/lesson6/Lesson6Navigator';
 import ComponentsDemo from './screens/ComponentsDemo';
+import AnimationsDemo from './screens/AnimationsDemo';
 
 // Stack Navigator oluştur
 const Stack = createNativeStackNavigator();
@@ -82,6 +83,15 @@ export default function App() {
           component={ComponentsDemo}
           options={{
             title: 'Custom Components',
+          }}
+        />
+
+        {/* Ders 9 - Animations */}
+        <Stack.Screen
+          name="AnimationsDemo"
+          component={AnimationsDemo}
+          options={{
+            title: 'Animasyonlar',
           }}
         />
       </Stack.Navigator>

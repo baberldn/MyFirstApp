@@ -310,6 +310,22 @@ export default function LessonsScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
+      {/* ==================== DERS 9 ==================== */}
+      <TouchableOpacity
+        style={styles.lessonCard}
+        onPress={() => navigation.navigate('AnimationsDemo')}
+      >
+        <View style={[styles.lessonBadge, { backgroundColor: '#6C63FF' }]}>
+          <Text style={styles.lessonText}>DERS 9</Text>
+        </View>
+        <Text style={styles.header}>Animasyonlar</Text>
+        <Text style={styles.subtitle}>Animated API, LayoutAnimation, Gesture Handling</Text>
+
+        <View style={[styles.navDemoPreview, { backgroundColor: '#6C63FF' }]}>
+          <Text style={styles.navDemoText}>Animasyon Demo →</Text>
+        </View>
+      </TouchableOpacity>
+
       {/* Alt boşluk */}
       <View style={{ height: 50 }} />
 
